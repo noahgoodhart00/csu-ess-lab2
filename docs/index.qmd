@@ -300,7 +300,7 @@ species_growth <- tree_dat_with_growth %>%
     mean_annual_growth = mean(annual_growth, na.rm = TRUE) 
   ) %>%
   group_by(species) %>% 
-  summarise(
+  summarize(
     mean_growth_rate = mean(mean_annual_growth, na.rm = TRUE) 
   )
 

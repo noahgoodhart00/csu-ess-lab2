@@ -2,9 +2,11 @@
 title: "Qs and As Lab2"
 format:
   html:
-    self-contained: false  # Prevents embedding issues
-    resources: ["img"]
+    self-contained: false
+    resources: 
+      - img  
 editor: visual
+
 ---
 
 First I made sure dplyr was pulled up, them made the data accessible, by importing the tree_dat.csv and putting it in my environment, then viewing it, and then I did glimpse because the instructions said to. I also imported the stand_dat.csv into my environment, because I think I will need that later.
@@ -324,6 +326,4 @@ print(slowest_growth)
 #| fig-width: 6
 #| fig-height: 4
 knitr::include_graphics(here::here("img", "Pinus_resinosa.jpg"))
-
-
 ```

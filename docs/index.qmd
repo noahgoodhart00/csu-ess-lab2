@@ -331,8 +331,3 @@ knitr::include_graphics(here::here("img", "Pinus_resinosa.jpg"))
 ```
 
 
-## The Fastest Growing Tree
-
-The fastest growing tree species in the dataset is *Pinus resinosa*.
-
-![](img/Pinus_resinosa.jpg){width=50%}

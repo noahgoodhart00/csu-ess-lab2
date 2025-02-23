@@ -322,6 +322,7 @@ print(slowest_growth)
 #| fig-align: center
 #| fig-width: 6
 #| fig-height: 4
-knitr::include_graphics("/Users/Noah/Desktop/ESS330 Spring25/Lab2Git/img/Pinus resinosa.jpg")
+knitr::include_graphics("img/Pinus_resinosa.jpg")
 ```
+
 

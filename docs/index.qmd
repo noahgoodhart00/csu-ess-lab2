@@ -322,7 +322,8 @@ print(slowest_growth)
 #| fig-align: center
 #| fig-width: 6
 #| fig-height: 4
-knitr::include_graphics("img/Pinus_resinosa.jpg")
+knitr::include_graphics(here::here("img", "Pinus_resinosa.jpg")) 
+
 ```
 
 

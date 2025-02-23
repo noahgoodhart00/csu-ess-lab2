@@ -2,8 +2,9 @@
 title: "Qs and As Lab2"
 format:
   html:
-    self-contained: false  # Prevents embedding issues
-    resources: ["img"]
+    resources:
+      - img/Pinus_resinosa.jpg
+
 editor: visual
 ---
 
@@ -208,7 +209,8 @@ print(class_count_2007)
 
 Question 17: Compute the mean DBH (in cm) and standard deviation of DBH (in cm) for all trees in 2007. Explain the values you found and their statistical meaning.
 
-A: After using summarize to find data of trees in 2007, I found the mean of DBH_cm of the trees to be 16.09351 cm, and the standard deviation to be 6.138643 cm. The mean shows us the average tree size of the trees measured in 2007, while the standard deviation shows us that the majority of the trees (68% because we are just using one standard deviation) measured in 2007, their DBH_cm fall between + or - 6.138643 cm of the average (16.09351 cm).
+A: After using summarize to find data of trees in 2007, I found the mean of DBH_cm of the trees to be 16.09351 cm, and the standard deviation to be 6.138643 cm. The mean shows us the average tree size of the trees measured in 2007, while the standard deviation shows us that the majority of the trees (68% because we are just using one standard deviation) measured in 2007, their DBH_cm fall between + or - 6.138643 cm of the average (16.09351 cm). 
+
 
 ```{r}
 summary_stats_2007 <- tree_dat %>%
@@ -224,6 +226,7 @@ print(summary_stats_2007)
 Question 18: Compute the per species mean tree age using only those ages recorded in 2003. Identify the three species with the oldest mean age.
 
 A: I created a new data frame called mean_age_by_species_2003, then used the original data frame (tree_dat) to filter all trees in 2003, grouped them by species, computed the mean age of the grouped species in 2003, arranged the results in descending order, then sliced the top 3. The 3 oldest tree species means are in the table below.
+
 
 ```{r}
 mean_age_by_species_2003 <- tree_dat %>%
@@ -268,7 +271,7 @@ stands_with_max_years <- stand_unique_years %>%
 print(stands_with_max_years)
 ```
 
-Final Question: Use a combination of dplyr verbs to compute these values and report the 3 species with the fastest growth, and the 3 species with the slowest growth. (\*\* You will need to use either lag() or diff() in your computation. Lastly, find and include an image of the fastest growing species. Add the image to your images directory.
+Final Question: Use a combination of dplyr verbs to compute these values and report the 3 species with the fastest growth, and the 3 species with the slowest growth. (** You will need to use either lag() or diff() in your computation. Lastly, find and include an image of the fastest growing species. Add the image to your images directory.
 
 A: For this problem, I first grouped by treeID, sorted by year, and computed annual_growth as the difference in DBH_cm from the previous year using lag(). I then removed rows with NA growth values (first year of each tree). Next I summarized each tree's growth_record_length (number of years) and total_growth, keeping only trees with at least 10 years of growth data. I then recalculated annual_growth and join with the filtered data set to retain only trees with ≥10 years of growth. Then I grouped by species and treeID, computed the mean annual growth for each tree, then averaged across trees for each species. Finally I sorted species by mean growth rate and selected the top 3 fastest and slowest-growing species.
 
@@ -323,7 +326,8 @@ print(slowest_growth)
 #| fig-align: center
 #| fig-width: 6
 #| fig-height: 4
-knitr::include_graphics(here::here("img", "Pinus_resinosa.jpg"))
-
+knitr::include_graphics(here::here("img", "Pinus_resinosa.jpg")) 
 
 ```
+
+

@@ -2,7 +2,7 @@
 title: "Qs and As Lab2"
 format:
   html:
-    self-contained: false
+    self-contained: true
     resources: 
       - img  
 editor: visual
